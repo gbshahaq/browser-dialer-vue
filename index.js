@@ -38,6 +38,7 @@ app.post('/voice', (request, response) => {
   const voiceResponse = new VoiceResponse();
   voiceResponse.dial({
     callerId: process.env.TWILIO_NUMBER,
+    record: 'record-from-ringing-dual',
   }, request.body.number);
 
   response.type('text/xml');

@@ -7,7 +7,7 @@ new Vue({
   // State data for dialer component
   data: {
     // Outgoing call country code
-    countryCode: '1',
+    countryCode: '44',
     currentNumber: '',
     muted: false,
     onPhone: false,

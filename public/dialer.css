@@ -69,3 +69,11 @@ p {
   font-style: italic;
   margin-top: 10px;
 }
+
+p1 {
+  font-size: 10px;
+  color: #e03d3d;
+  font-style: bold;
+  margin-top: 11px;
+  text-align: center;
+}
