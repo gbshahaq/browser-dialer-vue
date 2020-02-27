@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require('http');
+const https = require('https');
 const express = require('express');
 const { urlencoded } = require('body-parser');
 const twilio = require('twilio');
@@ -38,14 +39,16 @@ app.post('/voice', (request, response) => {
   const voiceResponse = new VoiceResponse();
   voiceResponse.dial({
     callerId: process.env.TWILIO_NUMBER,
-    record: 'record-from-answer',
+    record: 'record-from-answer-dual',
   }, request.body.number);
 
   response.type('text/xml');
   response.send(voiceResponse.toString());
 });
 
+// trying to figure out https...
 let server = http.createServer(app);
+//let server = https.createServer(app);
 let port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Express Server listening on *:${port}`);
